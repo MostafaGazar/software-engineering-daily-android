@@ -26,18 +26,18 @@ class EpisodeConverter {
     }
 
     @TypeConverter
-    fun stringToContent(string: String): Content {
-        return Content(string)
+    fun stringToContent(content: String): Content {
+        return Content(content)
     }
 
     @TypeConverter
-    fun excerptToString(content: Excerpt): String {
-        return content.rendered
+    fun excerptToString(excerpt: Excerpt?): String? {
+        return excerpt?.rendered
     }
 
     @TypeConverter
-    fun stringToExcerpt(string: String): Excerpt {
-        return Excerpt(string)
+    fun stringToExcerpt(excerpt: String?): Excerpt? {
+        return excerpt?.let { Excerpt(excerpt) }
     }
 
     @TypeConverter

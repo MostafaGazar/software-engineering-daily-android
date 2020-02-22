@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.koalatea.sedaily.R
-import com.koalatea.sedaily.analytics.AnalyticsConstants
 import com.koalatea.sedaily.network.Resource
 import org.koin.android.ext.android.inject
 

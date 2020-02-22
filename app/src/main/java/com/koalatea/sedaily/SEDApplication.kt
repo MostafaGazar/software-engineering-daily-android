@@ -1,7 +1,6 @@
 package com.koalatea.sedaily
 
 import android.app.Application
-import android.content.Context
 import com.koalatea.sedaily.koin.module.appModule
 import com.koalatea.sedaily.koin.module.networkModule
 import com.koalatea.sedaily.koin.module.viewModelsModule

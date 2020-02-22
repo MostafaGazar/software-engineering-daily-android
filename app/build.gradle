@@ -22,6 +22,11 @@ android {
         targetSdkVersion 29
         versionCode 19
         versionName "1.0.3"
+
+        // Algolia
+        buildConfigField("String", "algoliaApplicationId", algoliaApplicationId)
+        buildConfigField("String", "algoliaApiKey", algoliaApiKey)
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -143,6 +148,9 @@ dependencies {
 
     // Custom Tabs
     implementation 'androidx.browser:browser:1.0.0'
+
+    // Algolia
+    implementation 'com.algolia:algoliasearch-android:3.+'
 
     // Testing
     testImplementation 'junit:junit:4.12'

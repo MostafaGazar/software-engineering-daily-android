@@ -2,6 +2,8 @@ package com.koalatea.sedaily.repository
 
 import androidx.annotation.MainThread
 import androidx.paging.toLiveData
+import com.algolia.search.saas.Client
+import com.google.gson.Gson
 import com.koalatea.sedaily.database.AppDatabase
 import com.koalatea.sedaily.database.model.Episode
 import com.koalatea.sedaily.database.model.EpisodeDetails
@@ -18,6 +20,8 @@ import timber.log.Timber
 
 class EpisodesRepository(
         private val api: SEDailyApi,
+        private val algoliaClient: Client,
+        private val gson: Gson,
         private val db: AppDatabase,
         private val networkManager: NetworkManager,
         private val downloadManager: DownloadManager,
@@ -31,6 +35,8 @@ class EpisodesRepository(
         val boundaryCallback = EpisodesBoundaryCallback(
                 searchQuery = searchQuery,
                 api = api,
+                algoliaClient = algoliaClient,
+                gson = gson,
                 networkManager = networkManager,
                 insertResultIntoDb = this::insertResultIntoDb,
                 handleSuccessfulRefresh = this::handleSuccessfulRefresh,
