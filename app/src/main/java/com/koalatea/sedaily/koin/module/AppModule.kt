@@ -29,7 +29,7 @@ val appModule = module {
 
     single { EpisodeDetailsRepository(get(), get(), get(), get()) }
 
-    factory { EpisodesRepository(get(), get(), get(), get(), get()) }
+    factory { EpisodesRepository(get(), get(), get(), get(), get(), get(), get()) }
 
     single { CommentsRepository(get(), get(), get()) }
 

@@ -1,5 +1,6 @@
 package com.koalatea.sedaily.koin.module
 
+import com.algolia.search.saas.Client
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.koalatea.sedaily.BuildConfig
@@ -23,6 +24,10 @@ private const val BASE_URL: String = "https://software-enginnering-daily-api.her
 val networkModule = module {
 
     single { NetworkManager(androidApplication()) }
+
+    single {
+        Client(BuildConfig.algoliaApplicationId, BuildConfig.algoliaApiKey)
+    }
 
     single<OkHttpClient> {
         val userRepository = get<SessionRepository>()
